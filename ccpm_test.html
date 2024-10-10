@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complexity and Uncertainty</title>
+    <link rel="stylesheet" href="styles_ccpm.css">
+    <style>
+        .question {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1em;
+        }
+        .slider-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.5em;
+        }
+        .slider-group div {
+            flex: 1;
+            text-align: center;
+        }
+        .slider-group input {
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Critical Chain Project Management (CCPM)</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ccpm_test.html">CCPM Test</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Complexity Assessment</h1>
+    <form id="complexity-form">
+        <div class="question">
+            <label for="q1">Question 1: Relative size of the project</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="importance1" name="importance1" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="impact1" name="impact1" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="q2">Question 2: Type of innovation (technological or organizational)</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="importance2" name="importance2" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="impact2" name="impact2" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="q3">Question 3: Size of the organization</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="importance3" name="importance3" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="impact3" name="impact3" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="q4">Question 4: Location of project team members</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="importance4" name="importance4" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>3</output></div>
+                <div>Impact: <input type="range" id="impact4" name="impact4" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="q5">Question 5: Type of project</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="importance5" name="importance5" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="impact5" name="impact5" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="q6">Question 6: Number of departments in the organization involved in the project</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="importance6" name="importance6" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="impact6" name="impact6" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="q7">Question 7: Level of impact of the changes caused by the project</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="importance7" name="importance7" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="impact7" name="impact7" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="q8">Question 8: Number of stakeholders in the project</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="importance8" name="importance8" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="impact8" name="impact8" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="q9">Question 9: Type of project structure</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="importance9" name="importance9" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="impact9" name="impact9" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="q10">Question 10: Deadline pressure</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="importance10" name="importance10" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="impact10" name="impact10" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <button type="submit">Calculate Score</button>
+    </form>
+    <h2>Complexity Score: <span id="complexity-score"></span></h2>
+
+    <h1>Uncertainty Assessment</h1>
+    <form id="uncertainty-form">
+        <div class="question">
+            <label for="uq1">Question 1: Project duration</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="uimportance1" name="uimportance1" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="uimpact1" name="uimpact1" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="uq2">Question 2: Clarity of project requirements</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="uimportance2" name="uimportance2" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="uimpact2" name="uimpact2" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="uq3">Question 3: Availability of resources</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="uimportance3" name="uimportance3" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="uimpact3" name="uimpact3" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="uq4">Question 4: Experience of the project team</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="uimportance4" name="uimportance4" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="uimpact4" name="uimpact4" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="uq5">Question 5: Availability of information</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="uimportance5" name="uimportance5" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="uimpact5" name="uimpact5" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="uq6">Question 6: Level of stakeholder involvement</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="uimportance6" name="uimportance6" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="uimpact6" name="uimpact6" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="uq7">Question 7: Number of departments involved in the project</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="uimportance7" name="uimportance7" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="uimpact7" name="uimpact7" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="uq8">Question 8: Frequency of changes in project requirements</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="uimportance8" name="uimportance8" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="uimpact8" name="uimpact8" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="uq9">Question 9: Clarity of project goals</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="uimportance9" name="uimportance9" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="uimpact9" name="uimpact9" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <div class="question">
+            <label for="uq10">Question 10: Level of external dependencies</label>
+            <div class="slider-group">
+                <div>Importance: <input type="range" id="uimportance10" name="uimportance10" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+                <div>Impact: <input type="range" id="uimpact10" name="uimpact10" min="1" max="5" step="1" list="ticks" oninput="this.nextElementSibling.value = this.value"><output>0</output></div>
+            </div>
+        </div>
+        <button type="submit">Calculate Score</button>
+    </form>
+    <h2>Uncertainty Score: <span id="uncertainty-score"></span></h2>
+
+    <canvas id="result-chart" width="400" height="400"></canvas>
+
+    <datalist id="ticks">
+        <option value="1"></option>
+        <option value="2"></option>
+        <option value="3"></option>
+        <option value="4"></option>
+        <option value="5"></option>
+    </datalist>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script_ccpm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+
+</body>
+</html>
